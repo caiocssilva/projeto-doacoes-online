@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doações de Cestas Básicas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Doações de Cestas Básicas</h1>
+
+      <div class="buttons">
+        <button onclick="mostrarFormulario('doar')">Quero Doar</button>
+        <button onclick="mostrarFormulario('receber')">Preciso Receber</button>
+      </div>
+
+      <form id="formulario" class="hidden" onsubmit="enviarFormulario(event)">
+        <h2 id="tipoForm"></h2>
+        <input type="text" placeholder="Nome" id="nome" required />
+        <input type="tel" placeholder="Telefone" id="telefone" required />
+        <input type="text" placeholder="Endereço" id="endereco" required />
+        <button type="submit">Enviar</button>
+        <button type="button" class="btn-voltar" onclick="voltar()">Voltar</button>
+      </form>
+      <div id="mensagem" class="hidden">
+        <p>Formulário enviado com sucesso!</p>
+        <button type="button" class="btn-voltar" onclick="voltar()">Voltar</button>
+      </div>
+    </div>
+
+    <!-- SDK EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Seu script principal -->
+    <script src="script.js"></script>
+  </body>
+</html>
